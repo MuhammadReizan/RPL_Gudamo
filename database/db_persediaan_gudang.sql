@@ -157,6 +157,7 @@ INSERT INTO `tbl_user` (`id_user`, `nama_user`, `username`, `password`, `hak_aks
 (1, 'Muhammad Reizan', 'administrator', '$2y$12$Yi/I5f1jPoQNQnh6lWoVfuz.RtZ3OHcKN6PU.I62P0fYK1tJ7xMRi', 'Administrator'),
 (2, 'Muhammad Tri Setianto', 'admin gudang', '$2y$12$BeRYh13zfPXej97VgcfeNucYJGTElha5sRyIUQm1278D2u2Aqf6DS', 'Admin Gudang'),
 (3, 'Wahyudi Alfurqon', 'kepala gudang', '$2y$12$odXcPs.RLJJH6Ghv3s42c.5zg5qAOz/S3Adr0lXGNcVSJ6f1hHS6G', 'Kepala Gudang');
+(4, 'Julian Jie', 'administrator2', '$2y$12$nmhAA7EEkSLAlGyGC24UZ.KwqnPUfPR/P3MAMj.oGE1/7HTsRln22', 'Administrator');
 
 s for table `tbl_barang`
 
