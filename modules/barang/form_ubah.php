@@ -1,10 +1,23 @@
 <?php
-
 if (basename($_SERVER['PHP_SELF']) === basename(__FILE__)) {
-    // alihkan ke halaman error 404
     header('location: 404.html');
 }
-else { ?>
+else {
+    // mengecek data GET "id_barang"
+    if (isset($_GET['id'])) {
+        // ambil data GET dari button ubah
+        $id_barang = $_GET['id'];
+
+        // sql statement untuk menampilkan data dari tabel "tbl_barang", tabel "tbl_jenis", dan tabel "tbl_satuan" berdasarkan "id_barang"
+        $query = mysqli_query($mysqli, "SELECT a.id_barang, a.nama_barang, a.jenis, a.stok_minimum, a.stok, a.satuan, a.foto, b.nama_jenis, c.nama_satuan
+                                        FROM tbl_barang as a INNER JOIN tbl_jenis as b INNER JOIN tbl_satuan as c 
+                                        ON a.jenis=b.id_jenis AND a.satuan=c.id_satuan 
+                                        WHERE a.id_barang='$id_barang'")
+                                        or die('Ada kesalahan pada query tampil data : ' . mysqli_error($mysqli));
+        // ambil data hasil query
+        $data = mysqli_fetch_assoc($query);
+    }
+?>
     <!-- menampilkan pesan kesalahan unggah file -->
     <div id="pesan"></div>
 
@@ -19,7 +32,7 @@ else { ?>
                     <li class="separator"><i class="flaticon-right-arrow"></i></li>
                     <li class="nav-item"><a href="?module=barang" class="text-white">Barang</a></li>
                     <li class="separator"><i class="flaticon-right-arrow"></i></li>
-                    <li class="nav-item"><a>Entri</a></li>
+                    <li class="nav-item"><a>Ubah</a></li>
                 </ul>
             </div>
         </div>
@@ -29,54 +42,29 @@ else { ?>
         <div class="card">
             <div class="card-header">
                 <!-- judul form -->
-                <div class="card-title">Entri Data Barang</div>
+                <div class="card-title">Ubah Data Barang</div>
             </div>
-            <!-- form entri data -->
-            <form action="modules/barang/proses_simpan.php" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
+            <!-- form ubah data -->
+            <form action="modules/barang/proses_ubah.php" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-7">
                             <div class="form-group">
-                                <?php
-                                // membuat "id_barang"
-                                // sql statement untuk menampilkan 4 digit terakhir dari "id_barang" pada tabel "tbl_barang"
-                                $query = mysqli_query($mysqli, "SELECT RIGHT(id_barang,4) as nomor FROM tbl_barang ORDER BY id_barang DESC LIMIT 1")
-                                                                or die('Ada kesalahan pada query tampil data : ' . mysqli_error($mysqli));
-                                // ambil jumlah baris data hasil query
-                                $rows = mysqli_num_rows($query);
-
-                                // cek hasil query
-                                // jika "id_barang" sudah ada
-                                if ($rows <> 0) {
-                                    // ambil data hasil query
-                                    $data = mysqli_fetch_assoc($query);
-                                    // nomor urut "id_barang" yang terakhir + 1
-                                    $nomor_urut = $data['nomor'] + 1;
-                                }
-                                // jika "id_barang" belum ada
-                                else {
-                                    // nomor urut "id_barang" = 1
-                                    $nomor_urut = 1;
-                                }
-
-                                // menambahkan karakter "B" diawal dan karakter "0" disebelah kiri nomor urut
-                                $id_barang = "B" . str_pad($nomor_urut, 4, "0", STR_PAD_LEFT);
-                                ?>
                                 <label>ID Barang <span class="text-danger">*</span></label>
-                                <!-- tampilkan "id_barang" -->
-                                <input type="text" name="id_barang" class="form-control" value="<?php echo $id_barang; ?>" readonly>
+                                <input type="text" name="id_barang" class="form-control" value="<?php echo $data['id_barang']; ?>" readonly>
                             </div>
 
                             <div class="form-group">
                                 <label>Nama Barang <span class="text-danger">*</span></label>
-                                <input type="text" name="nama_barang" class="form-control" autocomplete="off" required>
+                                <input type="text" name="nama_barang" class="form-control" autocomplete="off" value="<?php echo $data['nama_barang']; ?>" required>
                                 <div class="invalid-feedback">Nama barang tidak boleh kosong.</div>
                             </div>
 
                             <div class="form-group">
                                 <label>Jenis Barang <span class="text-danger">*</span></label>
                                 <select name="jenis" class="form-control select2-single" autocomplete="off" required>
-                                    <option selected disabled value="">-- Pilih --</option>
+                                    <option value="<?php echo $data['jenis']; ?>"><?php echo $data['nama_jenis']; ?></option>
+                                    <option disabled value="">-- Pilih --</option>
                                     <?php
                                     // sql statement untuk menampilkan data dari tabel "tbl_jenis"
                                     $query_jenis = mysqli_query($mysqli, "SELECT * FROM tbl_jenis ORDER BY nama_jenis ASC")
@@ -93,14 +81,15 @@ else { ?>
 
                             <div class="form-group">
                                 <label>Stok Minimum <span class="text-danger">*</span></label>
-                                <input type="text" name="stok_minimum" class="form-control" autocomplete="off" onKeyPress="return goodchars(event,'0123456789',this)" required>
+                                <input type="text" name="stok_minimum" class="form-control" autocomplete="off" onKeyPress="return goodchars(event,'0123456789',this)" value="<?php echo $data['stok_minimum']; ?>" required>
                                 <div class="invalid-feedback">Stok minimum tidak boleh kosong.</div>
                             </div>
 
                             <div class="form-group">
                                 <label>Satuan <span class="text-danger">*</span></label>
                                 <select name="satuan" class="form-control select2-single" autocomplete="off" required>
-                                    <option selected disabled value="">-- Pilih --</option>
+                                    <option value="<?php echo $data['satuan']; ?>"><?php echo $data['nama_satuan']; ?></option>
+                                    <option disabled value="">-- Pilih --</option>
                                     <?php
                                     // sql statement untuk menampilkan data dari tabel "tbl_satuan"
                                     $query_satuan = mysqli_query($mysqli, "SELECT * FROM tbl_satuan ORDER BY nama_satuan ASC")
@@ -121,7 +110,19 @@ else { ?>
                                 <input type="file" accept=".jpg, .jpeg, .png" id="foto" name="foto" class="form-control" autocomplete="off">
                                 <div class="card mt-3 mb-3">
                                     <div class="card-body text-center">
-                                        <img style="max-height:200px" src="images/no_image.png" class="img-fluid foto-preview" alt="Foto Barang">
+                                        <?php
+                                        // mengecek data foto barang
+                                        // jika data "foto" tidak ada di database
+                                        if (is_null($data['foto'])) { ?>
+                                            <!-- tampilkan foto default -->
+                                            <img style="max-height:200px" src="images/no_image.png" class="img-fluid foto-preview" alt="Foto Barang">
+                                        <?php
+                                        }
+                                        // jika data "foto" ada di database
+                                        else { ?>
+                                            <!-- tampilkan foto barang dari database -->
+                                            <img style="max-height:200px" src="images/<?php echo $data['foto']; ?>" class="img-fluid foto-preview" alt="Foto Barang">
+                                        <?php } ?>
                                     </div>
                                 </div>
                                 <small class="form-text text-secondary">
