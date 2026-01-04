@@ -1,5 +1,4 @@
 <?php
-// format nama hari indonesia
 function nama_hari_indo($tanggal)
 {
 	// format tanggal yyyy-mm-dd
@@ -53,6 +52,8 @@ function tanggal_indo($tanggal)
 	);
 	$explode = explode('-', $tanggal);
 
+	// variabel pecahkan 1 = bulan
+	// variabel pecahkan 2 = tahun
 	return $explode[2] . ' ' . $bulan[(int)$explode[1]] . ' ' . $explode[0];
 }
 
