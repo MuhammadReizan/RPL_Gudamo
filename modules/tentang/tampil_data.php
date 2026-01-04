@@ -5,85 +5,76 @@ if (basename($_SERVER['PHP_SELF']) === basename(__FILE__)) {
 }
 // jika file di include oleh file lain, tampilkan isi file
 else { ?>
-    <div class="panel-header bg-secondary-gradient">
-        <div class="page-inner py-4">
+    <div class="custom-panel-header" style="background: linear-gradient(135deg, #0d6efd, #0a58ca);">
+        <div class="custom-page-inner py-4">
             <div class="page-header text-white">
-                <!-- judul halaman -->
-                <h4 class="page-title text-white"><i class="fas fa-info-circle mr-2"></i> Tentang Aplikasi</h4>
-                <!-- breadcrumbs -->
+                <h4 class="page-title text-white"><i class="fas fa-cogs mr-2"></i> Tentang Aplikasi Gudamo</h4>
                 <ul class="breadcrumbs">
                     <li class="nav-home"><a href="?module=dashboard"><i class="flaticon-home text-white"></i></a></li>
                     <li class="separator"><i class="flaticon-right-arrow"></i></li>
                     <li class="nav-item"><a>Aplikasi</a></li>
                     <li class="separator"><i class="flaticon-right-arrow"></i></li>
-                    <li class="nav-item"><a>Tentang</a></li>
+                    <li class="nav-item"><a>Tentang Gudamo</a></li>
                 </ul>
             </div>
         </div>
     </div>
 
-    <div class="page-inner mt--5">
+    <div class="custom-page-inner mt--5">
         <div class="card">
             <div class="card-body">
                 <div class="py-3">
                     <div class="d-flex align-items-start">
                         <div class="flex-shrink-0">
-                            <i class="fas fa-hashtag text-brand mr-2"></i>
+                            <i class="fas fa-cogs text-brand mr-2"></i>
                         </div>
                         <div>
+                            <h4 class="lh-2 text-dark mb-3">Tentang Gudamo</h4>
+                            <p><i class="far fa-circle fa-xs text-brand mr-2"></i> Gudamo adalah aplikasi manajemen gudang dan operasional yang dirancang khusus untuk mendukung operasional Cafe Monaco Coffee.</p>
+                            <p><i class="far fa-circle fa-xs text-brand mr-2"></i> Aplikasi ini memungkinkan pemilik dan staf kafe untuk dengan mudah mengelola stok bahan baku, laporan keuangan, dan pengaturan pengiriman barang secara real-time.</p>
                         </div>
                     </div>
                 </div>
                 <div class="py-3">
                     <div class="d-flex align-items-start">
                         <div class="flex-shrink-0">
-                            <i class="fas fa-hashtag text-brand mr-2"></i>
+                            <i class="fas fa-hammer text-brand mr-2"></i>
                         </div>
                         <div>
-                            <h4 class="lh-2 text-dark mb-3">Permissions</h4>
-                            <p><i class="far fa-circle fa-xs text-brand mr-2"></i> Private use</p>
-                            <p><i class="far fa-circle fa-xs text-brand mr-2"></i> Modification</p>
+                            <h4 class="lh-2 text-dark mb-3">Fitur Utama</h4>
+                            <p><i class="far fa-circle fa-xs text-brand mr-2"></i> Manajemen Persediaan - Memantau stok bahan baku kafe secara real-time, memastikan bahan tidak habis atau kadaluarsa.</p>
+                            <p><i class="far fa-circle fa-xs text-brand mr-2"></i> Pengelolaan Gudang - Mengatur barang masuk dan keluar, serta mengurangi pemborosan dengan pengelolaan yang lebih terstruktur.</p>
+                            <p><i class="far fa-circle fa-xs text-brand mr-2"></i> Laporan Keuangan Otomatis - Menyediakan laporan keuangan dan analisis kinerja kafe secara otomatis, yang memudahkan pengambilan keputusan.</p>
+                            <p><i class="far fa-circle fa-xs text-brand mr-2"></i> Notifikasi Pengingat - Sistem pemberitahuan untuk mengingatkan pengguna tentang kekurangan stok atau kebutuhan pengisian ulang bahan baku.</p>
                         </div>
                     </div>
                 </div>
                 <div class="py-3">
                     <div class="d-flex align-items-start">
                         <div class="flex-shrink-0">
-                            <i class="fas fa-hashtag text-brand mr-2"></i>
+                            <i class="fas fa-shield-alt text-brand mr-2"></i>
                         </div>
                         <div>
-                            <h4 class="lh-2 text-dark mb-3">Limitations</h4>
-                            <p><i class="far fa-circle fa-xs text-brand mr-2"></i> Commercial use</p>
-                            <p><i class="far fa-circle fa-xs text-brand mr-2"></i> Distribution</p>
-                            <p><i class="far fa-circle fa-xs text-brand mr-2"></i> Liability</p>
-                            <p><i class="far fa-circle fa-xs text-brand mr-2"></i> Warranty</p>
+                            <h4 class="lh-2 text-dark mb-3">Keamanan dan Keandalan</h4>
+                            <p><i class="far fa-circle fa-xs text-brand mr-2"></i> Keamanan Data Terjamin - Gudamo menggunakan enkripsi data dan backup otomatis untuk memastikan keamanan informasi bisnis Anda.</p>
+                            <p><i class="far fa-circle fa-xs text-brand mr-2"></i> Akses Terkontrol - Pengaturan hak akses untuk berbagai level pengguna, sehingga hanya pihak yang berwenang yang dapat mengakses data sensitif.</p>
                         </div>
                     </div>
                 </div>
                 <div class="py-3">
                     <div class="d-flex align-items-start">
                         <div class="flex-shrink-0">
-                            <i class="fas fa-hashtag text-brand mr-2"></i>
+                            <i class="fas fa-cogs text-brand mr-2"></i>
                         </div>
                         <div>
-                            <h4 class="lh-2 text-dark mb-3">Requirements</h4>
-                            <p><i class="far fa-circle fa-xs text-brand mr-2"></i> PHP 8.0.<small>x</small></p>
-                            <p><i class="far fa-circle fa-xs text-brand mr-2"></i> MySQL 5.7.<small>x</small></p>
-                            <p><i class="far fa-circle fa-xs text-brand mr-2"></i> MySQLi Extension</p>
-                            <p><i class="far fa-circle fa-xs text-brand mr-2"></i> Bootstrap 4 (Atlantis Lite Bootstrap Dashboard)</p>
-                            <p><i class="far fa-circle fa-xs text-brand mr-2"></i> Web Font Loader v1.6.16</p>
-                            <p><i class="far fa-circle fa-xs text-brand mr-2"></i> jQuery v3.2.1</p>
-                            <p><i class="far fa-circle fa-xs text-brand mr-2"></i> jQuery Scrollbar v0.2.10</p>
-                            <p><i class="far fa-circle fa-xs text-brand mr-2"></i> jQuery UI v1.12.1</p>
-                            <p><i class="far fa-circle fa-xs text-brand mr-2"></i> jQuery UI Touch Punch v0.2.3</p>
-                            <p><i class="far fa-circle fa-xs text-brand mr-2"></i> DataTables v1.10.<small>x</small></p>
-                            <p><i class="far fa-circle fa-xs text-brand mr-2"></i> Datepicker v1.9.0</p>
-                            <p><i class="far fa-circle fa-xs text-brand mr-2"></i> Select2 4.0.13</p>
-                            <p><i class="far fa-circle fa-xs text-brand mr-2"></i> Dompdf v1.0.2</p>
+                            <h4 class="lh-2 text-dark mb-3">Manfaat Gudamo</h4>
+                            <p><i class="far fa-circle fa-xs text-brand mr-2"></i> Efisiensi Operasional - Dengan otomatisasi dan pemantauan real-time, Gudamo membantu meningkatkan efisiensi operasional kafe Anda.</p>
+                            <p><i class="far fa-circle fa-xs text-brand mr-2"></i> Penghematan Waktu - Proses yang lebih cepat dalam pengelolaan barang, stok, dan laporan keuangan, memungkinkan staf fokus pada pelayanan pelanggan.</p>
+                            <p><i class="far fa-circle fa-xs text-brand mr-2"></i> Peningkatan Pengelolaan Keuangan - Gudamo menyediakan laporan keuangan yang mudah dipahami, sehingga Anda dapat membuat keputusan finansial yang lebih baik.</p>
                         </div>
                     </div>
                 </div>
-            </div> 
+            </div>
         </div>
     </div>
 <?php } ?>

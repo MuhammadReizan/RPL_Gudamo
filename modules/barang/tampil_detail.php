@@ -20,7 +20,7 @@ else {
         $data = mysqli_fetch_assoc($query);
     }
 ?>
-    <div class="panel-header bg-secondary-gradient">
+<div class="panel-header" style="background: linear-gradient(135deg, #0d6efd, #0a58ca);">
         <div class="page-inner py-45">
             <div class="d-flex align-items-left align-items-md-top flex-column flex-md-row">
                 <div class="page-header text-white">

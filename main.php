@@ -58,7 +58,7 @@ else { ?>
 		<div class="wrapper">
 			<div class="main-header">
 				<!-- Logo Header -->
-				<div class="logo-header" data-background-color="purple">
+				 <div class="logo-header" style="background: linear-gradient(135deg, #0d6efd, #0a58ca);">
 					<!-- Logo Brand -->
 					<a href="?module=dashboard" class="logo">
 						<div class="navbar-brand">
@@ -82,7 +82,7 @@ else { ?>
 				<!-- End Logo Header -->
 
 				<!-- Navbar Header -->
-				<nav class="navbar navbar-header navbar-expand-lg" data-background-color="purple2">
+				<nav class="navbar navbar-header navbar-expand-lg" style="background: linear-gradient(135deg, #0d6efd, #0a58ca);">
 					<div class="container-fluid">
 						<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
 							<!-- data user login -->

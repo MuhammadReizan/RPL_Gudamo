@@ -8,7 +8,7 @@ else { ?>
     <!-- menampilkan pesan kesalahan unggah file -->
     <div id="pesan"></div>
 
-    <div class="panel-header bg-secondary-gradient">
+    <div class="panel-header" style="background: linear-gradient(135deg, #0d6efd, #0a58ca);">
         <div class="page-inner py-4">
             <div class="page-header text-white">
                 <!-- judul halaman -->
@@ -135,7 +135,8 @@ else { ?>
                 </div>
                 <div class="card-action">
                     <!-- button simpan data -->
-                    <input type="submit" name="simpan" value="Simpan" class="btn btn-secondary btn-round pl-4 pr-4 mr-2">
+                   <input type="submit" name="simpan" value="Simpan" class="btn btn-secondary btn-round pl-4 pr-4 mr-2" style="background: linear-gradient(135deg, #0d6efd, #0a58ca); border: none; color: white;">
+
                     <!-- button kembali ke halaman tampil data -->
                     <a href="?module=barang" class="btn btn-default btn-round pl-4 pr-4">Batal</a>
                 </div>

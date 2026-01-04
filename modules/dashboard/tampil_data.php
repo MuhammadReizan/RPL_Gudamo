@@ -18,7 +18,7 @@ else {
         }
     }
 ?>
-    <div class="panel-header bg-secondary-gradient">
+    <div class="panel-header" style="background: linear-gradient(135deg, #0d6efd, #0a58ca);">
         <div class="page-inner py-5">
             <div class="d-flex align-items-left align-items-md-top flex-column flex-md-row">
                 <div class="page-header text-white">
@@ -28,6 +28,7 @@ else {
             </div>
         </div>
     </div>
+
     <div class="page-inner mt--5">
         <div class="row row-card-no-pd mt--2">
             <!-- menampilkan informasi jumlah data barang -->

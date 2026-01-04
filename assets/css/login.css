@@ -1,7 +1,7 @@
 .login {
-  background: #6861ce !important;
-  background: -webkit-linear-gradient(legacy-direction(-45deg), #2a20ac, #6861ce) !important;
-  background: linear-gradient(-45deg, #2a20ac, #6861ce) !important;
+  background: #2012e0 !important;
+  background: -webkit-linear-gradient(legacy-direction(-45deg), #0d6efd, #0a58ca) !important;
+  background: linear-gradient(-45deg, #0d6efd, #0a58ca) !important;
 }
 
 .login .wrapper.wrapper-login {
@@ -122,7 +122,7 @@
 }
 
 .form-floating-label .form-control.filled + .placeholder {
-  color: #6861ce !important;
+  color: #0e0d14 !important;
 }
 
 .form-floating-label .form-control ::-webkit-input-placeholder {

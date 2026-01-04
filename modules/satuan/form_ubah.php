@@ -16,7 +16,7 @@ else {
         $data = mysqli_fetch_assoc($query);
     }
 ?>
-    <div class="panel-header bg-secondary-gradient">
+<div class="panel-header" style="background: linear-gradient(135deg, #0d6efd, #0a58ca);">
         <div class="page-inner py-4">
             <div class="page-header text-white">
                 <!-- judul halaman -->
