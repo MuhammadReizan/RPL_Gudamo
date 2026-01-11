@@ -42,16 +42,17 @@ CREATE TABLE `tbl_barang` (
 --
 
 INSERT INTO `tbl_barang` (`id_barang`, `nama_barang`, `jenis`, `stok_minimum`, `stok`, `satuan`, `foto`) VALUES
-('B0001', 'Pupuk Pukalet', 1, 10, 80, 7, 'ea9088dd8adc116108720a88032a7c6d8f5d9b7f.jpg'),
-('B0002', 'Pupuk Dolomite', 1, 10, 150, 7, 'fd8cffeb4e7cb7de56e1a1fc4364d5a847fbe462.jpg'),
-('B0003', 'Pupuk KCL/MOP', 1, 10, 100, 7, '6572254293b0132f7dc27181eebbfc6ea01dcea7.jpg'),
-('B0004', 'Gesapax 500 SC', 6, 10, 10, 5, '11848deee6a78aedbc3c884eabe09ce9d704643d.jpg'),
-('B0005', 'Amonia Cair', 10, 10, 5, 5, NULL),
-('B0006', 'Asam Sulfate PA 731', 10, 10, 90, 5, NULL),
-('B0007', 'Vitamin Karet Plus', 2, 10, 40, 7, '6acfd4ead5a37d922a37539b0f660a44e45f290d.png'),
-('B0008', 'Matador 25 EC', 5, 10, 100, 5, 'e07fd8c62c7df5219fc13bed6620c9c026407c16.jpg'),
-('B0009', 'Belerang Powder', 7, 10, 70, 7, NULL),
-('B0010', 'Asam Semut', 10, 10, 130, 7, NULL);
+('B0001', 'Kopi Arabica Roasted', 1, 5, 25, 7, NULL),
+('B0002', 'Kopi Robusta Roasted', 1, 5, 20, 7, NULL),
+('B0003', 'Teh Celup (Isi 25)', 1, 10, 60, 2, NULL),
+('B0004', 'Susu UHT 1L', 2, 10, 40, 1, NULL),
+('B0005', 'Syrup Vanilla 750ml', 3, 5, 18, 10, NULL),
+('B0006', 'Gula Aren Cair 1L', 4, 5, 12, 10, NULL),
+('B0007', 'Tepung Terigu 1kg', 5, 5, 30, 7, NULL),
+('B0008', 'Kentang Frozen 1kg', 8, 5, 22, 7, NULL),
+('B0009', 'Cup Plastik 12oz', 10, 10, 100, 2, NULL),
+('B0010', 'Tissue Roll', 14, 10, 35, 14, NULL);
+
 
 -- --------------------------------------------------------
 
@@ -71,20 +72,9 @@ CREATE TABLE `tbl_barang_keluar` (
 --
 
 INSERT INTO `tbl_barang_keluar` (`id_transaksi`, `tanggal`, `barang`, `jumlah`) VALUES
-('TK-0000001', '2021-08-03', 'B0001', 20),
-('TK-0000002', '2021-08-03', 'B0007', 10),
-('TK-0000003', '2021-08-04', 'B0003', 50),
-('TK-0000004', '2021-08-07', 'B0004', 40),
-('TK-0000005', '2021-08-07', 'B0006', 10),
-('TK-0000006', '2021-08-11', 'B0005', 20),
-('TK-0000007', '2021-08-13', 'B0010', 50),
-('TK-0000008', '2021-08-13', 'B0002', 30),
-('TK-0000009', '2021-08-15', 'B0009', 10),
-('TK-0000010', '2021-08-15', 'B0005', 25),
-('TK-0000011', '2021-08-19', 'B0009', 20),
-('TK-0000012', '2021-08-27', 'B0005', 50),
-('TK-0000013', '2021-08-27', 'B0002', 20),
-('TK-0000014', '2021-08-30', 'B0010', 20);
+('TK-0000001', '2021-08-03', 'B0001', 10),
+('TK-0000002', '2021-08-03', 'B0007', 7),
+
 
 --
 -- Triggers `tbl_barang_keluar`
@@ -122,17 +112,9 @@ CREATE TABLE `tbl_barang_masuk` (
 --
 
 INSERT INTO `tbl_barang_masuk` (`id_transaksi`, `tanggal`, `barang`, `jumlah`) VALUES
-('TM-0000001', '2021-08-01', 'B0001', 100),
-('TM-0000002', '2021-08-01', 'B0002', 200),
-('TM-0000003', '2021-08-01', 'B0003', 150),
-('TM-0000004', '2021-08-01', 'B0007', 50),
-('TM-0000005', '2021-08-05', 'B0004', 50),
-('TM-0000006', '2021-08-05', 'B0005', 50),
-('TM-0000007', '2021-08-05', 'B0006', 100),
-('TM-0000008', '2021-08-05', 'B0008', 100),
-('TM-0000009', '2021-08-05', 'B0009', 100),
-('TM-0000010', '2021-08-05', 'B0010', 200),
-('TM-0000011', '2021-08-25', 'B0005', 50);
+('TM-0000001', '2021-08-01', 'B0001', 20),
+('TM-0000002', '2021-08-01', 'B0002', 26),
+
 
 --
 -- Triggers `tbl_barang_masuk`
@@ -168,20 +150,20 @@ CREATE TABLE `tbl_jenis` (
 --
 
 INSERT INTO `tbl_jenis` (`id_jenis`, `nama_jenis`) VALUES
-(1, 'Pupuk Kimia Alam'),
-(2, 'Pupuk Hijau'),
-(3, 'Pelumas Mesin Pabrik'),
-(4, 'Pelumas Kendaraan dan Mesin'),
-(5, 'Insektisida'),
-(6, 'Herbisida'),
-(7, 'Fungisida'),
-(8, 'Bahan Stimulasi'),
-(9, 'Bahan Pengepakan'),
-(10, 'Bahan Kimia Pengolahan'),
-(11, 'Bahan Cat dan Kapur'),
-(12, 'Bahan Bakar'),
-(13, 'Alat Perlengkapan Pertanian'),
-(14, 'Persediaan Bahan Lain');
+(1, 'Bahan Baku Minuman'),
+(2, 'Susu & Dairy'),
+(3, 'Sirup, Saus & Topping'),
+(4, 'Gula & Pemanis'),
+(5, 'Bahan Bakery & Pastry'),
+(6, 'Bahan Makanan Utamaerbisida'),
+(7, 'Sayur & Buah'),
+(8, 'Frozen Food'),
+(9, 'Snack & Cemilan'),
+(10, 'Kemasan & Packaging'),
+(11, 'Bahan Take Away & Disposable'),
+(12, 'Peralatan Barista'),
+(13, 'Peralatan Dapur & Serving'),
+(14, 'Kebersihan & Sanitasi');
 
 -- --------------------------------------------------------
 
@@ -199,16 +181,25 @@ CREATE TABLE `tbl_satuan` (
 --
 
 INSERT INTO `tbl_satuan` (`id_satuan`, `nama_satuan`) VALUES
-(1, 'Tabung'),
-(2, 'Set'),
-(3, 'Roll'),
+(1, 'Pcs'),
+(2, 'Pack'),
+(3, 'Box'),
 (4, 'Meter'),
 (5, 'Liter'),
 (6, 'Lembar'),
 (7, 'Kilogram'),
 (8, 'Gram'),
 (9, 'Buah'),
-(10, 'Botol');
+(10, 'Botol'),
+(11, 'Kaleng'),
+(12, 'Sachet'),
+(13, 'Bag'),
+(14, 'Roll'),
+(15, 'Set'),
+(16, 'Mililiter'),
+(17, 'Cup'),
+(18, 'Porsi'),
+(19, 'Tray');
 
 -- --------------------------------------------------------
 
