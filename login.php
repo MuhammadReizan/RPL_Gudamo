@@ -11,7 +11,7 @@
 	<title>Gudang dan Manajemen Operasional</title>
 
 	<!-- Favicon icon -->
-	<link rel="icon" href="assets/img/favicon.png" type="image/x-icon" />
+	<link rel="icon" href="assets/img/favicon2.png" type="image/x-icon" />
 
 	<!-- Fonts and icons -->
 	<script src="assets/js/plugin/webfont/webfont.min.js"></script>
@@ -83,7 +83,7 @@
 	<div class="wrapper wrapper-login">
 		<div class="container container-login animated fadeIn">
 			<!-- logo -->
-			<div class="text-center mb-4"><img src="assets/img/logo.png" alt="Logo" width="95px"></div>
+			<div class="text-center mb-4"><img src="assets/img/logo2.png" alt="Logo" width="140px"></div>
 			<!-- judul -->
 			<h3 class="text-center mb-5">Gudang dan Manajemen Operasional <br>GUDAMO</h3>
 			<!-- form login -->
@@ -105,12 +105,14 @@
 
 				<div class="form-action mt-2">
 					<!-- button login -->
-					<input type="submit" name="login" value="LOGIN" class="btn btn-secondary btn-rounded btn-login btn-block">
+					<input type="submit" name="login" value="LOGIN"
+					class="btn btn-secondary btn-rounded btn-login btn-block"
+					style="background: linear-gradient(135deg, #0d6efd, #0a58ca); border: none; color: #fff;">
 				</div>
 
 				<!-- footer -->
 				<div class="login-footer mt-5">
-					<span class="msg">&copy; 2026 - Gudang dan Manajemen Operasional GUDAMO</span>
+					<span class="msg">&copy; 2026 - Gudang dan Manajemen Operasional</span>
 				</div>
 			</form>
 		</div>

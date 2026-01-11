@@ -1,7 +1,7 @@
 <?php
 session_start();      // mengaktifkan session
 
-// pengecekan session login user 
+// pengecekan session login user
 // jika user belum login
 if (empty($_SESSION['username']) && empty($_SESSION['password'])) {
 	// alihkan ke halaman login dan tampilkan pesan peringatan login
@@ -22,7 +22,7 @@ else { ?>
 		<title>Gudang dan Manajemen Operasional</title>
 
 		<!-- Favicon icon -->
-		<link rel="icon" href="assets/img/favicon.png" type="image/x-icon" />
+		<link rel="icon" href="assets/img/favicon2.png" type="image/x-icon" />
 
 		<!-- Fonts and icons -->
 		<script src="assets/js/plugin/webfont/webfont.min.js"></script>
@@ -50,6 +50,39 @@ else { ?>
 		<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 		<link rel="stylesheet" href="assets/css/atlantis.min.css">
 
+		<!-- Tambahan CSS: bikin logo jelas di background biru -->
+		<style>
+			/* header gradient konsisten */
+			.logo-header,
+			.navbar.navbar-header {
+				background: linear-gradient(135deg, #0d6efd, #0a58ca) !important;
+			}
+
+			/* layout brand */
+			.logo-header .navbar-brand {
+				display: flex;
+				align-items: center;
+				gap: 10px;
+				margin: 0;
+				padding: 0;
+			}
+
+			/* badge putih transparan biar logo kontras */
+			.logo-header .brand-logo-wrap {
+				background: rgba(255, 255, 255, .92);
+				padding: 4px 6px;
+				border-radius: 10px;
+				line-height: 0;
+				box-shadow: 0 2px 8px rgba(0, 0, 0, .15);
+			}
+
+			.logo-header .brand-logo {
+				height: 50px;
+				width: auto;
+				display: block;
+			}
+		</style>
+
 		<!-- jQuery Core -->
 		<script src="assets/js/core/jquery.3.2.1.min.js"></script>
 	</head>
@@ -58,14 +91,17 @@ else { ?>
 		<div class="wrapper">
 			<div class="main-header">
 				<!-- Logo Header -->
-				 <div class="logo-header" style="background: linear-gradient(135deg, #0d6efd, #0a58ca);">
+				<div class="logo-header">
 					<!-- Logo Brand -->
 					<a href="?module=dashboard" class="logo">
 						<div class="navbar-brand">
-							<span><i class="fab fa-gofore fa-lg text-warning"></i></span>
-							<span class="text-white">UDAMO</span>
+							<span class="brand-logo-wrap">
+								<img src="assets/img/logo2.png" alt="Logo" class="brand-logo">
+							</span>
+							<span class="text-white font-weight-bold">UDAMO</span>
 						</div>
 					</a>
+
 					<!-- Navbar Toggler -->
 					<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="navbar-toggler-icon">
@@ -82,7 +118,7 @@ else { ?>
 				<!-- End Logo Header -->
 
 				<!-- Navbar Header -->
-				<nav class="navbar navbar-header navbar-expand-lg" style="background: linear-gradient(135deg, #0d6efd, #0a58ca);">
+				<nav class="navbar navbar-header navbar-expand-lg">
 					<div class="container-fluid">
 						<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
 							<!-- data user login -->
@@ -142,10 +178,8 @@ else { ?>
 						</div>
 						<!-- Sidebar Menu -->
 						<ul class="nav nav-secondary">
-
 							<!-- panggil file "sidebar_menu.php" untuk menampilkan menu -->
 							<?php include "sidebar_menu.php"; ?>
-
 						</ul>
 					</div>
 				</div>
@@ -155,18 +189,15 @@ else { ?>
 			<div class="main-panel">
 				<!-- Main Content -->
 				<div class="content">
-
 					<!-- panggil file "content.php" untuk menampilkan halaman konten -->
 					<?php include "content.php"; ?>
-
 				</div>
 				<!-- End Main Content -->
 
 				<!-- Footer -->
 				<footer class="footer">
 					<div class="container-fluid">
-						<div class="copyright ml-auto">
-						</div>
+						<div class="copyright ml-auto"></div>
 					</div>
 				</footer>
 				<!-- End Footer -->
